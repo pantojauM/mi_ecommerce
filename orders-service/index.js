@@ -1,14 +1,13 @@
 const express = require('express');
 const app = express();
 
-const orders = [
-    { id: 1, userId: 1, productId: 2 }
-];
+// Definimos el puerto 3000 por defecto
+const PORT = process.env.PORT || 3000;
 
-app.get('/orders', (req, res) => {
-    res.json(orders);
+app.get('/', (req, res) => {
+  res.send('¡Gateway de Ecommerce funcionando en Jenkins!');
 });
 
-app.listen(3003, () => {
-    console.log("Orders Service running on port 3003");
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
 });
