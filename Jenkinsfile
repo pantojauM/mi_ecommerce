@@ -22,19 +22,19 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build Docker') {
             steps {
                 sh 'docker build -t mi-ecommerce .'
             }
         }
 
-        stage('Run Container') {
+        stage('Run') {
             steps {
                 sh 'docker stop mi-ecommerce || true'
                 sh 'docker rm mi-ecommerce || true'
