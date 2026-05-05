@@ -1,26 +1,31 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'node' 
-    }
-
     stages {
-        stage('Hola Mundo') {
+
+        stage('Checkout') {
             steps {
-                echo '¡Hola desde Jenkins para la U de Manizales!'
+                git 'https://github.com/pantojauM/mi_ecommerce.git'
             }
         }
-        stage('Construcción') {
+
+        stage('Install Dependencies') {
             steps {
-                echo 'Simulando construcción...'
-                sh 'npm run build'
+                sh 'npm install'
             }
         }
-        stage('Despliegue') {
+
+        stage('Build Docker Image') {
             steps {
-                echo 'Simulando despliegue...'
-                echo 'Microservicios activos en Docker Desktop'
+                sh 'docker build -t mi-ecommerce .'
+            }
+        }
+
+        stage('Run Container') {
+            steps {
+                sh 'docker stop mi-ecommerce || true'
+                sh 'docker rm mi-ecommerce || true'
+                sh 'docker run -d -p 3000:3000 --name mi-ecommerce mi-ecommerce'
             }
         }
     }
