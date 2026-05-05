@@ -3,9 +3,15 @@ pipeline {
 
     stages {
 
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Checkout') {
             steps {
-                git 'https://github.com/pantojauM/mi_ecommerce.git'
+                git branch: 'main', url: 'https://github.com/pantojauM/mi_ecommerce.git'
             }
         }
 
