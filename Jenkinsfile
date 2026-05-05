@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'node'
+    }
+
     stages {
 
         stage('Clean Workspace') {
@@ -12,6 +16,13 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/pantojauM/mi_ecommerce.git'
+            }
+        }
+
+        stage('Check Node') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
 
