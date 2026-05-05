@@ -5,11 +5,11 @@ pipeline {
 
         stage('Clean Workspace') {
             steps {
-                cleanWs()
+                deleteDir()
             }
         }
 
-        stage('Checkout GitHub') {
+        stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/pantojauM/mi_ecommerce.git'
             }
