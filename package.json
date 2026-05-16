@@ -1,7 +1,18 @@
 {
-  "name": "mi-ecommerce",
+  "name": "mi_ecommerce",
   "version": "1.0.0",
+  "description": "Proyecto de microservicios para grado",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"No tests yet\"",
+    "lint": "npx eslint .",
+    "build": "echo \"Proyecto listo\""
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.9.0"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.4.0",
