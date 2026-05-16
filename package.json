@@ -2,5 +2,10 @@
   "name": "mi-ecommerce",
   "version": "1.0.0",
   "main": "app.js",
-  "dependencies": {}
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.4.0",
+    "globals": "^17.6.0",
+    "jest": "^30.4.2"
+  }
 }
