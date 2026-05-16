@@ -17,7 +17,6 @@ app.get('/orders', async (req, res) => {
     res.json(response.data);
 });
 
-app.listen(3000, "0.0.0.0" () => {
+app.listen(3000, "0.0.0.0", () => {
     console.log("Gateway running on port 3000");
 });
-
