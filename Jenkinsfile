@@ -38,7 +38,7 @@ pipeline {
             steps {
                 sh 'docker stop mi-ecommerce || true'
                 sh 'docker rm mi-ecommerce || true'
-                sh 'docker run -d -p 3000:3000 --name mi-ecommerce mi-ecommerce'
+                sh 'docker run -d -p 4000:3000 --name mi-ecommerce mi-ecommerce'
             }
         }
     }
